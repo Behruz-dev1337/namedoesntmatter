@@ -36,50 +36,34 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-
         body { background-color: var(--bg); color: var(--text); transition: background-color 0.3s, color 0.3s; min-height: 100vh; }
-
-        /* Login Screen Styles */
-        .login-container {
-            display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 1rem;
-        }
-        
-        #appContent {
-            display: none;
-            flex-direction: column; min-height: 100vh;
-        }
-
-        .checkbox-wrapper {
-            display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem;
-        }
-        
-        input[type="checkbox"] {
-            width: auto; padding: 0; cursor: pointer; transform: scale(1.1);
-        }
-        
+        .login-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 1rem; }
+        #appContent { display: none; flex-direction: column; min-height: 100vh; }
+        .checkbox-wrapper { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.2rem; }
+        input[type="checkbox"] { width: auto; padding: 0; cursor: pointer; transform: scale(1.1); }
         .checkbox-wrapper label { margin-bottom: 0; cursor: pointer; }
 
         header {
             display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem;
             background: var(--header-bg); border-bottom: 2px solid var(--header-border);
-            color: var(--header-text);
-            position: sticky; top: 0; z-index: 10;
+            color: var(--header-text); position: sticky; top: 0; z-index: 10;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         .teacher-name { 
-            font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; 
-            text-transform: uppercase;
+            font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
             background: linear-gradient(to right, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
         .header-actions { display: flex; gap: 1rem; align-items: center; }
-
-        .theme-toggle { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 40px; height: 40px; color: var(--header-text); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+        .theme-toggle { 
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); 
+            border-radius: 50%; width: 40px; height: 40px; color: var(--header-text); 
+            font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; 
+            justify-content: center; transition: all 0.2s; 
+        }
         .theme-toggle:hover { transform: scale(1.1); background: rgba(255,255,255,0.2); }
-
         .public-link {
             color: var(--header-text); text-decoration: none; font-weight: 600; font-size: 0.9rem;
             padding: 0.5rem 1rem; border-radius: 8px; background: rgba(255,255,255,0.1);
@@ -88,32 +72,26 @@
         .public-link:hover { background: rgba(255,255,255,0.2); }
 
         main { flex: 1; padding: 2rem; max-width: 1200px; margin: 0 auto; width: 100%; }
-
         .tabs { display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 2px solid var(--input-border); padding-bottom: 0.5rem; }
         .tab { 
             background: none; border: none; color: var(--text); font-size: 1.1rem; font-weight: 600; 
             cursor: pointer; padding: 0.5rem 1rem; opacity: 0.6; transition: opacity 0.2s;
         }
         .tab.active { opacity: 1; border-bottom: 3px solid var(--primary); margin-bottom: -0.65rem; }
-
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        /* Form Styles */
         .form-container {
             background: var(--card-bg); padding: 2rem; border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             max-width: 500px; margin: 0 auto;
         }
-        
         .form-group { margin-bottom: 1.2rem; }
         label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.95rem; }
         input, select {
             width: 100%; padding: 0.75rem; border: 1px solid var(--input-border);
-            border-radius: 8px; background-color: var(--input-bg); color: var(--text);
-            font-size: 1rem;
+            border-radius: 8px; background-color: var(--input-bg); color: var(--text); font-size: 1rem;
         }
-        
         button[type="submit"], .btn-primary {
             width: 100%; padding: 0.85rem; background: var(--primary); color: #fff;
             border: none; border-radius: 8px; font-size: 1rem; font-weight: 600;
@@ -122,7 +100,6 @@
         button[type="submit"]:hover, .btn-primary:hover { background: var(--primary-hover); }
         button:disabled { opacity: 0.7; cursor: not-allowed; }
 
-        /* List Styles */
         .list-container {
             background: var(--card-bg); border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -134,7 +111,6 @@
         .list-item:last-child { border-bottom: none; }
         .list-item-info { display: flex; align-items: center; gap: 1rem; }
         
-        /* Добавлен фон для пустых картинок */
         .list-item-img { 
             width: 50px; height: 50px; border-radius: 6px; object-fit: cover; 
             background-color: var(--input-border); 
@@ -151,7 +127,6 @@
 
         .loader { text-align: center; padding: 2rem; font-weight: 500; }
         
-        /* Edit Modal */
         .edit-modal {
             display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.6); z-index: 1000;
             justify-content: center; align-items: center; padding: 1rem;
@@ -167,7 +142,6 @@
     </style>
 </head>
 <body>
-    <!-- LOGIN SCREEN -->
     <div class="login-container" id="loginScreen">
         <div class="form-container" style="width: 100%; max-width: 400px;">
             <h2 style="text-align: center; margin-bottom: 1.5rem;">Admin Login</h2>
@@ -186,7 +160,6 @@
         </div>
     </div>
 
-    <!-- MAIN APPLICATION CONTENT -->
     <div id="appContent">
         <header>
             <div class="teacher-name">Teacher S. MA'MUROV</div>
@@ -205,7 +178,6 @@
                 <button class="tab" onclick="switchTab('manage')">Manage Existing</button>
             </div>
 
-            <!-- UPLOAD TAB -->
             <div id="uploadTab" class="tab-content active">
                 <div class="form-container">
                     <h2 style="margin-bottom: 1rem; text-align: center;">Upload Certificate</h2>
@@ -247,7 +219,6 @@
                 </div>
             </div>
 
-            <!-- MANAGE TAB -->
             <div id="manageTab" class="tab-content">
                 <div class="list-container" id="certList">
                     <div class="loader" id="listLoader">Loading certificates...</div>
@@ -256,7 +227,6 @@
         </main>
     </div>
 
-    <!-- EDIT MODAL -->
     <div class="edit-modal" id="editModal">
         <div class="edit-content">
             <div class="edit-header">
@@ -299,29 +269,21 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
-        import { getDatabase, ref, push, onValue, remove, update } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+        import { getDatabase, ref, push, onValue, remove, update, set, get } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
 
-        // --- AUTHENTICATION LOGIC ---
         const loginScreen = document.getElementById('loginScreen');
         const appContent = document.getElementById('appContent');
         const loginForm = document.getElementById('loginForm');
         const loginError = document.getElementById('loginError');
-
         const encodedSecret = "U2FyZG9yMjY=";
 
-        if (localStorage.getItem('auth_remembered') === 'true') {
-            showApp();
-        }
+        if (localStorage.getItem('auth_remembered') === 'true') showApp();
 
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const inputVal = document.getElementById('loginPassword').value;
-            const rememberMe = document.getElementById('rememberMe').checked;
-
             if (btoa(inputVal) === encodedSecret) {
-                if (rememberMe) {
-                    localStorage.setItem('auth_remembered', 'true');
-                }
+                if (document.getElementById('rememberMe').checked) localStorage.setItem('auth_remembered', 'true');
                 showApp();
             } else {
                 loginError.style.display = 'block';
@@ -336,16 +298,11 @@
             loginError.style.display = 'none';
         });
 
-        function showApp() {
-            loginScreen.style.display = 'none';
-            appContent.style.display = 'flex';
-        }
-        // ----------------------------
+        function showApp() { loginScreen.style.display = 'none'; appContent.style.display = 'flex'; }
 
         window.switchTab = function(tab) {
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            
             if(tab === 'upload') {
                 document.querySelectorAll('.tab')[0].classList.add('active');
                 document.getElementById('uploadTab').classList.add('active');
@@ -355,14 +312,10 @@
             }
         };
 
-        window.closeEditModal = function() {
-            document.getElementById('editModal').classList.remove('show');
-        }
+        window.closeEditModal = function() { document.getElementById('editModal').classList.remove('show'); }
 
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
         const htmlEl = document.documentElement;
-
         let currentTheme = localStorage.getItem('theme') || 'light';
         setTheme(currentTheme);
 
@@ -374,7 +327,7 @@
         function setTheme(theme) {
             htmlEl.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
-            themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+            document.getElementById('themeIcon').textContent = theme === 'light' ? '🌙' : '☀️';
         }
 
         const firebaseConfig = {
@@ -394,16 +347,14 @@
         const certType = document.getElementById('certType');
         const scoreGroup = document.getElementById('scoreGroup');
         const levelGroup = document.getElementById('levelGroup');
-        const scoreInput = document.getElementById('scoreInput');
-        const levelSelect = document.getElementById('levelSelect');
-
+        
         certType.addEventListener('change', (e) => {
             if (e.target.value === 'IELTS') {
                 scoreGroup.style.display = 'block'; levelGroup.style.display = 'none';
-                scoreInput.required = true; levelSelect.required = false;
+                document.getElementById('scoreInput').required = true; document.getElementById('levelSelect').required = false;
             } else {
                 scoreGroup.style.display = 'none'; levelGroup.style.display = 'block';
-                scoreInput.required = false; levelSelect.required = true;
+                document.getElementById('scoreInput').required = false; document.getElementById('levelSelect').required = true;
             }
         });
 
@@ -436,23 +387,30 @@
             let score = ''; let levelCategory = '';
 
             if (type === 'IELTS') {
-                score = parseFloat(scoreInput.value).toFixed(1);
+                score = parseFloat(document.getElementById('scoreInput').value).toFixed(1);
                 const num = parseFloat(score);
                 if (num >= 7.0) levelCategory = 'C1';
                 else if (num >= 5.5) levelCategory = 'B2';
                 else levelCategory = 'B1';
             } else {
-                score = levelSelect.value; levelCategory = score;
+                score = document.getElementById('levelSelect').value; levelCategory = score;
             }
 
             resizeImage(document.getElementById('photo').files[0], (base64) => {
+                const newCertRef = push(certsRef);
+                const certId = newCertRef.key;
+
                 const certData = {
                     firstName: document.getElementById('firstName').value.trim(),
                     lastName: document.getElementById('lastName').value.trim(),
-                    type, score, levelCategory, photoBase64: base64, timestamp: Date.now()
+                    type, score, levelCategory, timestamp: Date.now()
                 };
 
-                push(certsRef, certData).then(() => {
+                // Запись идет в два разных узла параллельно
+                Promise.all([
+                    set(newCertRef, certData),
+                    set(ref(db, `certificate_images/${certId}`), base64)
+                ]).then(() => {
                     alert('Uploaded successfully!');
                     document.getElementById('uploadForm').reset();
                     window.switchTab('manage');
@@ -468,7 +426,6 @@
             const list = document.getElementById('certList');
             list.innerHTML = '';
             currentData = snapshot.val() || {};
-
             const keys = Object.keys(currentData);
 
             if (keys.length === 0) {
@@ -476,12 +433,11 @@
                 return;
             }
 
-            // ШАГ 1: Отрисовываем все карточки БЕЗ изображений
+            // МГНОВЕННАЯ ОТРИСОВКА СПИСКА
             keys.forEach(key => {
                 const cert = currentData[key];
                 const item = document.createElement('div');
                 item.className = 'list-item';
-                
                 item.innerHTML = `
                     <div class="list-item-info">
                         <img id="manage-img-${key}" class="list-item-img">
@@ -498,11 +454,12 @@
                 list.appendChild(item);
             });
 
-            // Навешиваем слушатели событий
             document.querySelectorAll('.btn-danger').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     if(confirm('Are you sure you want to delete this certificate?')) {
-                        remove(ref(db, `certificates/${e.target.dataset.id}`));
+                        const id = e.target.dataset.id;
+                        remove(ref(db, `certificates/${id}`));
+                        remove(ref(db, `certificate_images/${id}`));
                     }
                 });
             });
@@ -511,38 +468,38 @@
                 btn.addEventListener('click', (e) => openEditModal(e.target.dataset.id));
             });
 
-            // ШАГ 2: Загружаем изображения по одному сверху вниз
+            // ФОНОВАЯ И ПОСЛЕДОВАТЕЛЬНАЯ ЗАГРУЗКА ИЗОБРАЖЕНИЙ
             async function loadImagesSequentially() {
                 for (let key of keys) {
-                    await new Promise(resolve => {
-                        const img = document.getElementById(`manage-img-${key}`);
-                        if (!img) { resolve(); return; }
-                        
-                        img.onload = () => resolve();
-                        img.onerror = () => resolve(); 
-                        
-                        // Присваиваем src и ждем окончания загрузки
-                        img.src = currentData[key].photoBase64 || '';
-                    });
+                    const imgSnap = await get(ref(db, `certificate_images/${key}`));
+                    const base64 = imgSnap.val();
+
+                    if (base64) {
+                        await new Promise(resolve => {
+                            const img = document.getElementById(`manage-img-${key}`);
+                            if (!img) { resolve(); return; }
+                            
+                            img.onload = () => resolve();
+                            img.onerror = () => resolve(); 
+                            img.src = base64;
+                        });
+                    }
                 }
             }
             loadImagesSequentially();
         });
 
-        // Edit Form Logic
         const editCertType = document.getElementById('editCertType');
         const editScoreGroup = document.getElementById('editScoreGroup');
         const editLevelGroup = document.getElementById('editLevelGroup');
-        const editScoreInput = document.getElementById('editScoreInput');
-        const editLevelSelect = document.getElementById('editLevelSelect');
-
+        
         editCertType.addEventListener('change', (e) => {
             if (e.target.value === 'IELTS') {
                 editScoreGroup.style.display = 'block'; editLevelGroup.style.display = 'none';
-                editScoreInput.required = true; editLevelSelect.required = false;
+                document.getElementById('editScoreInput').required = true; document.getElementById('editLevelSelect').required = false;
             } else {
                 editScoreGroup.style.display = 'none'; editLevelGroup.style.display = 'block';
-                editScoreInput.required = false; editLevelSelect.required = true;
+                document.getElementById('editScoreInput').required = false; document.getElementById('editLevelSelect').required = true;
             }
         });
 
@@ -555,12 +512,11 @@
             
             if(cert.type === 'IELTS') {
                 editScoreGroup.style.display = 'block'; editLevelGroup.style.display = 'none';
-                editScoreInput.value = cert.score;
+                document.getElementById('editScoreInput').value = cert.score;
             } else {
                 editScoreGroup.style.display = 'none'; editLevelGroup.style.display = 'block';
-                editLevelSelect.value = cert.score;
+                document.getElementById('editLevelSelect').value = cert.score;
             }
-            
             document.getElementById('editModal').classList.add('show');
         }
 
@@ -571,13 +527,13 @@
             let score = ''; let levelCategory = '';
 
             if (type === 'IELTS') {
-                score = parseFloat(editScoreInput.value).toFixed(1);
+                score = parseFloat(document.getElementById('editScoreInput').value).toFixed(1);
                 const num = parseFloat(score);
                 if (num >= 7.0) levelCategory = 'C1';
                 else if (num >= 5.5) levelCategory = 'B2';
                 else levelCategory = 'B1';
             } else {
-                score = editLevelSelect.value; levelCategory = score;
+                score = document.getElementById('editLevelSelect').value; levelCategory = score;
             }
 
             const updates = {
@@ -590,7 +546,6 @@
                 window.closeEditModal();
             });
         });
-
     </script>
 </body>
 </html>
